@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SQL Ultimate Exam Prep — Mega Practice Hub</title>
+<title>SQL Exam Practice Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -188,12 +188,12 @@ input.blank-input.no{border-color:var(--red);background:#fae0db;color:var(--red)
 <div class="wrap">
   <div class="brand">
     <div class="dot"></div>
-    <h1>SQL Ultimate Master Hub</h1>
-    <span> · Comprehensive Mock Exam</span>
+    <h1>SQL Practice Hub</h1>
+    <span> · Mock Exam Room</span>
   </div>
 
   <div class="scorebar" id="lab-scorebar">
-    <div class="stat">Lab Progression: <span id="ansCount">0</span>/<span id="totCount">0</span></div>
+    <div class="stat">Questions Answered: <span id="ansCount">0</span>/<span id="totCount">0</span></div>
     <div class="stat">Correct: <span id="goodCount">0</span></div>
     <div class="bar"><div class="fill" id="lab-fill"></div></div>
     <button class="btn-sm" onclick="location.reload()">Exit Lab</button>
@@ -201,25 +201,25 @@ input.blank-input.no{border-color:var(--red);background:#fae0db;color:var(--red)
 
   <section id="start" class="screen active">
     <div class="hero">
-      <div class="eyebrow">Comprehensive Review · Structured Query Language</div>
+      <div class="eyebrow">Syllabus Review · Structured Query Language</div>
       <h2>Ready for tomorrow's <em>final exam?</em></h2>
-      <p>Test your knowledge down to the syntax layer. Choose between a fast-paced simulated exam room or an interactive query code builder mapping to your practical coursework.</p>
+      <p>Test your skills. Choose between a quick-fire mock exam mode or a practical query-building workspace mapping directly to your coursework.</p>
     </div>
 
     <div class="modes">
       <div class="mode-card" onclick="selectMode(1)">
         <div>
           <h3>1. Simulated Exam Room</h3>
-          <p>44 timed multiple-choice questions testing conceptual frameworks across Intro to SQL, DDL, and DML. Offers historical granular performance feedback.</p>
+          <p>44 timed multiple-choice questions testing concepts across Intro to SQL, DDL, and DML. Gives clear breakdown score feedback at the end.</p>
         </div>
-        <div class="meta-info">All-encompassing · 44 Queries</div>
+        <div class="meta-info">Multiple Choice · 44 Queries</div>
       </div>
       <div class="mode-card" onclick="selectMode(2)">
         <div>
           <h3>2. Interactive Query Lab</h3>
-          <p>Write directly inside real code fragments. Covers Complex Joins, Subqueries (WHERE/FROM/SELECT), Aggregations, Windows, and Virtual Views.</p>
+          <p>Fill in the blank lines directly inside actual SQL code structures. Covers Complex Joins, Subqueries, Aggregations, Window Functions, and Views.</p>
         </div>
-        <div class="meta-info">Hands-on Syntax · 43 Challenges</div>
+        <div class="meta-info">Write Code · 43 Challenges</div>
       </div>
     </div>
 
@@ -229,18 +229,18 @@ input.blank-input.no{border-color:var(--red);background:#fae0db;color:var(--red)
         <div class="chips" id="chips">
           <button class="chip on" data-f="All">Full Curriculum (44 Qs)</button>
           <button class="chip" data-f="Intro">Intro to SQL</button>
-          <button class="chip" data-f="DDL">DDL Frameworks</button>
-          <button class="chip" data-f="DML">DML Execution</button>
+          <button class="chip" data-f="DDL">DDL (Structure)</button>
+          <button class="chip" data-f="DML">DML (Data)</button>
         </div>
-        <button class="start-btn" id="go">Launch Exam Deck &rarr;</button>
-        <p class="kbd-hint">Keyboard controls active: <kbd>1</kbd>–<kbd>4</kbd> to pick answer, <kbd>Enter</kbd> to progress</p>
+        <button class="start-btn" id="go">Start Exam Deck &rarr;</button>
+        <p class="kbd-hint">Keyboard hotkeys: press <kbd>1</kbd>–<kbd>4</kbd> to choose answer, <kbd>Enter</kbd> to go next</p>
       </div>
     </div>
   </section>
 
   <section id="quiz" class="screen">
     <div class="topbar">
-      <span class="tag" id="tag">DML</span>
+      <span class="tag" id="tag">SQL</span>
       <span class="meta">Question <b id="qpos">1</b>/<span id="qtot">44</span>  ·  Score <b id="qscore">0</b></span>
     </div>
     <div class="track"><div class="fill" id="fill"></div></div>
@@ -256,11 +256,11 @@ input.blank-input.no{border-color:var(--red);background:#fae0db;color:var(--red)
   <section id="lab" class="screen">
     <div class="hero">
       <div class="eyebrow">Mode 2 · Practical Code Workspace</div>
-      <h2>Interactive Syntax Sandpit</h2>
-      <p>Type missing clauses or conditions. Spacing and terminal semicolons are normalized automatically. Review your relational database schema mapping before executing.</p>
+      <h2>Interactive Code Fill-in-the-Blanks</h2>
+      <p>Type missing SQL keywords or operators. Spaces and semicolons at the end are automatically checked. Use the table schema below to find your column connections.</p>
     </div>
     
-    <div class="schema-box"><b>DBProduct Schema Matrix (Relational Structures)</b>
+    <div class="schema-box"><b>Database Table Matrix (Relationships)</b>
 Customer(<b>ID</b>, name, address, city, state, postal_code)
 Product(<b>ID</b>, description, finish, standard_price)
 Order_t(<b>ID</b>, #customer_id, order_date)
@@ -281,25 +281,25 @@ Order_detail(<b>#order_id</b>, <b>#product_id</b>, quantity)</div>
       <div class="verdict" id="r-verdict"></div>
       <div class="verdict-sub" id="r-sub"></div>
     </div>
-    <div id="r-perfect" class="perfect" style="display:none">Flawless execution. You've locked this down cold. Sleep well before tomorrow!</div>
-    <div class="bd-title">Categorical Breakdown</div>
+    <div id="r-perfect" class="perfect" style="display:none">Perfect score! Excellent work. You are fully prepared!</div>
+    <div class="bd-title">Score Breakdown by Category</div>
     <div class="bd" id="bd"></div>
     <div id="r-review-wrap">
-      <div class="bd-title">Targeted Remediation List</div>
+      <div class="bd-title">Questions to Review</div>
       <div class="review" id="review"></div>
     </div>
     <div class="actions">
-      <button class="btn-ghost" id="home">Return Dashboard</button>
-      <button class="btn-primary" id="again">Retry Deck</button>
+      <button class="btn-ghost" id="home">Main Menu</button>
+      <button class="btn-primary" id="again">Try Again</button>
     </div>
   </section>
 
-  <p class="foot">Compiled from Core Syllabus Material · Institute Engineering Prep Hub</p>
+  <p class="foot">Compiled from Core Course Materials · Student Exam Preparation Hub</p>
 </div>
 
 <script>
 /* ==========================================================================
-   DATA DECK BLOCK 1: MODE 1 CLASSIC MCQs
+    DATA DECK BLOCK 1: MODE 1 CLASSIC MCQs
    ========================================================================== */
 const ALL_M1=[
  {t:"Intro",q:"Which of these is a DML command?",o:["CREATE","ALTER","UPDATE","DROP"],a:2,e:"UPDATE modifies records inside objects, meaning it is DML. CREATE, ALTER, and DROP modify structures and belong to DDL."},
@@ -352,247 +352,247 @@ const ALL_M1=[
 ];
 
 /* ==========================================================================
-   DATA DECK BLOCK 2: MODE 2 INTERACTIVE COMPLIANT WORKSPACE
+    DATA DECK BLOCK 2: MODE 2 INTERACTIVE LAB
    ========================================================================== */
 const SECTIONS_M2=[
-{title:"Inner, Natural & Outer Joins",sub:"Combining rows from multiple relations.",questions:[
+{title:"Inner, Natural & Outer Joins",sub:"Combining columns from multiple tables together.",questions:[
   {type:"mcq",q:"What is the key difference between joining with <code>ON</code> and joining with <code>USING</code>?",
-   opts:["ON works on any condition & keeps both columns; USING needs a same-named column & shows it once",
-         "They are identical in every way","ON can only be used with outer joins","USING joins on all columns automatically"],correct:0,
-   explain:"<p><b>ON</b> allows any condition and the joined columns appear twice. <b>USING(col)</b> requires a shared column name and merges it into one column (equi-join).</p>"},
-  {type:"fill",q:"Find the IDs and names of customers who made any order, with no duplicate rows.",
+   opts:["ON works on any connection condition and shows both columns; USING needs a column with the exact same name and shows it only once",
+         "They are exactly the same in every way","ON can only be used with outer joins","USING joins all matching table columns automatically"],correct:0,
+   explain:"<p><b>ON</b> allows any condition and shows both columns. <b>USING(column_name)</b> requires a shared column name and merges them into one column output.</p>"},
+  {type:"fill",q:"Find the IDs and names of customers who made an order, with no repeating rows.",
    template:"SELECT @@ c.id, c.name\nFROM customer c @@ order_t o\n@@ c.id = o.customer_id;",
    blanks:[["distinct"],["inner join","join"],["on"]],
-   explain:"<p><code>DISTINCT</code> removes duplicates; <code>INNER JOIN ... ON</code> links the matching rows.</p>"},
+   explain:"<p><code>DISTINCT</code> removes duplicates; <code>INNER JOIN ... ON</code> links the matching rows together.</p>"},
   {type:"mcq",q:"What does a <code>NATURAL JOIN</code> do?",
-   opts:["Joins on a column you name explicitly","Joins on every same-named column automatically and shows each once","Returns the Cartesian product","Keeps unmatched rows from the left table"],correct:1,
-   explain:"<p>A natural join matches on <i>all</i> identically-named columns automatically and collapses them to a single column each.</p>"},
-  {type:"fill",q:"MySQL has no FULL OUTER JOIN. Complete the simulation between student and studentcourse on sid.",
+   opts:["Joins on a column you name yourself","Looks for and joins on every column with the same name automatically, showing them once","Returns a cross product of all rows","Keeps unmatched rows from the left table"],correct:1,
+   explain:"<p>A natural join automatically matches on <i>all</i> columns with identical names across both tables.</p>"},
+  {type:"fill",q:"MySQL has no FULL OUTER JOIN. Complete this method to simulate it using student and studentcourse on sid.",
    template:"SELECT student.*, studentcourse.*\nFROM student @@ studentcourse\n   ON student.sid = studentcourse.sid\n@@\nSELECT student.*, studentcourse.*\nFROM student @@ studentcourse\n   ON student.sid = studentcourse.sid;",
    blanks:[["left join","left outer join"],["union"],["right join","right outer join"]],
-   explain:"<p>A LEFT JOIN <code>UNION</code> a RIGHT JOIN reproduces a full outer join; UNION drops the duplicate matched rows.</p>"},
-  {type:"mcq",q:"In a LEFT JOIN of student onto studentcourse, a student enrolled in no course will show...",
-   opts:["nothing — the row is dropped","an error","NULL in every studentcourse column","a duplicate of another student"],correct:2,
-   explain:"<p>Left-table rows are always kept; unmatched right-side columns become <b>NULL</b>.</p>"},
-  {type:"fill",q:"Find each ordered item whose total (quantity × standard_price) is greater than 190.",
+   explain:"<p>A LEFT JOIN combined with a RIGHT JOIN using <code>UNION</code> creates a full outer join outcome.</p>"},
+  {type:"mcq",q:"In a LEFT JOIN of student onto studentcourse, a student with no matching courses will show:",
+   opts:["Nothing — the row is deleted","A database syntax error","NULL values in every studentcourse table column","A duplicate copy of another student row"],correct:2,
+   explain:"<p>Rows from the left table are always kept; missing columns on the right side are filled with <b>NULL</b>.</p>"},
+  {type:"fill",q:"Find each ordered item whose total price (quantity × standard_price) is more than 190.",
    template:"SELECT order_id, description, standard_price, quantity,\n       standard_price * quantity AS total\nFROM order_detail AS od @@ product AS p\nON p.id = od.product_id\n   AND standard_price * quantity @@ 190;",
    blanks:[["join","inner join"],[">"]],
-   explain:"<p>JOIN the two tables on product id, then keep only rows where the computed total <code>&gt; 190</code>.</p>"},
+   explain:"<p>JOIN the tables on product ID, then filter for calculations where total <code>&gt; 190</code>.</p>"},
 ]},
-{title:"Subqueries in WHERE",sub:"Nested SELECT used as a condition.",questions:[
-  {type:"mcq",q:"A subquery (inner / nested query) is...",
-   opts:["a SELECT nested inside another query whose result the outer query uses","a backup copy of a table","a stored procedure","a type of index"],correct:0,
-   explain:"<p>It's a nested SELECT whose result feeds the outer query (in WHERE, FROM, or SELECT).</p>"},
-  {type:"fill",q:"List id and name of customers whose name also appears in the mechanic table.",
+{title:"Subqueries in WHERE",sub:"Using a nested SELECT query as a filtering condition.",questions:[
+  {type:"mcq",q:"A subquery (nested / inner query) is:",
+   opts:["A SELECT query inside another query that provides data for the main query to use","A backup copy of a database table","A database shortcut function","A type of system index"],correct:0,
+   explain:"<p>It is a nested SELECT query whose output feeds the main outer query criteria.</p>"},
+  {type:"fill",q:"List the ID and name of customers whose name is also listed inside the mechanic table.",
    template:"SELECT id, name\nFROM customer_t\nWHERE name @@ (SELECT name FROM mechanic);",
    blanks:[["in"]],
-   explain:"<p><code>IN (subquery)</code> keeps rows whose name is found in the subquery's result.</p>"},
-  {type:"fill",q:"Find customers who do NOT share a name with any mechanic (the EXCEPT idea).",
+   explain:"<p><code>IN (subquery)</code> checks if a value exists inside the list returned by the subquery.</p>"},
+  {type:"fill",q:"Find customers who do NOT share a name with any mechanic.",
    template:"SELECT name\nFROM customer_t\nWHERE name @@ (SELECT DISTINCT name FROM mechanic);",
    blanks:[["not in"]],
-   explain:"<p><code>NOT IN</code> excludes any name present in the mechanic list.</p>"},
-  {type:"mcq",q:"<code>EXISTS (subquery)</code> returns...",
-   opts:["the number of rows","TRUE if the subquery returns at least one row, else FALSE","always TRUE","the first matching value"],correct:1,
-   explain:"<p>EXISTS is a boolean test: true when the subquery yields one or more rows.</p>"},
-  {type:"mcq",q:"A correlated subquery is one that...",
-   opts:["runs only once","uses a value from the outer query, so it re-runs per outer row","cannot use WHERE","returns multiple columns"],correct:1,
-   explain:"<p>It references an outer column (e.g. <code>c1.id</code>), so it's re-evaluated for every outer row.</p>"},
-  {type:"fill",q:"Using EXISTS, list id and name of customers who have made any order.",
+   explain:"<p><code>NOT IN</code> removes any rows that match names found in the subquery list.</p>"},
+  {type:"mcq",q:"What does <code>EXISTS (subquery)</code> return?",
+   opts:["The total count of rows","TRUE if the subquery returns 1 or more rows, otherwise FALSE","It always returns TRUE","The value of the first row found"],correct:1,
+   explain:"<p>EXISTS is a true/false test that checks if the subquery finds any matching data.</p>"},
+  {type:"mcq",q:"A correlated subquery is a subquery that:",
+   opts:["Runs only once for the whole query","Uses a value from the outer main query, so it runs again for every row","Cannot use a WHERE clause filter","Returns multiple columns at once"],correct:1,
+   explain:"<p>Because it links to a value in the main outer table, it has to run again for every individual row processed.</p>"},
+  {type:"fill",q:"Using EXISTS, list the ID and name of customers who have made at least one order.",
    template:"SELECT c1.id, c1.name\nFROM customer_t AS c1\nWHERE @@ (\n    SELECT * FROM order_t AS o\n    WHERE c1.id = o.customer_id);",
    blanks:[["exists"]],
-   explain:"<p>EXISTS is true when a matching order row exists for that customer.</p>"},
+   explain:"<p>EXISTS checks if any order records match the customer ID.</p>"},
   {type:"fill",q:"Using EXISTS, list customers who live in the same state as at least one OTHER customer.",
    template:"SELECT name, state\nFROM customer_t AS c1\nWHERE EXISTS (\n    SELECT * FROM customer_t AS c2\n    WHERE c2.state = c1.state AND c1.id @@ c2.id);",
    blanks:[["<>","!="]],
-   explain:"<p><code>c1.id &lt;&gt; c2.id</code> stops a customer matching itself.</p>"},
-  {type:"mcq",q:"<code>x &gt; ALL (subquery)</code> is TRUE when...",
-   opts:["x beats at least one value","x is greater than every value in the set","x equals one value","the subquery is empty"],correct:1,
-   explain:"<p>ALL means the comparison must hold for <i>every</i> value — so x is bigger than the max.</p>"},
-  {type:"fill",q:"Using ALL, find the product with the highest standard_price (ignore NULL prices).",
+   explain:"<p><code>c1.id &lt;&gt; c2.id</code> prevents a customer from matching with themselves.</p>"},
+  {type:"mcq",q:"When is <code>x &gt; ALL (subquery)</code> evaluated as TRUE?",
+   opts:["When x is bigger than at least one value","When x is larger than every single value in the subquery results","When x matches any value exactly","When the subquery returns an empty dataset"],correct:1,
+   explain:"<p>ALL means the rule must be true for everything — so x must be bigger than the maximum value.</p>"},
+  {type:"fill",q:"Using ALL, find the product with the highest standard_price (skip NULL prices).",
    template:"SELECT *\nFROM product_t AS p1\nWHERE standard_price @@ @@ (\n    SELECT standard_price FROM product_t AS p2\n    WHERE p2.id <> p1.id AND NOT ISNULL(standard_price));",
    blanks:[[">"],["all"]],
-   explain:"<p>A value is the maximum when it is greater than ALL the others.</p>"},
-  {type:"mcq",q:"<code>x = ANY (subquery)</code> behaves the same as which operator?",
+   explain:"<p>A price is the absolute highest when it is greater than ALL other prices in the table.</p>"},
+  {type:"mcq",q:"Which operator behaves exactly the same way as <code>x = ANY (subquery)</code>?",
    opts:["NOT IN","ALL","IN","EXISTS"],correct:2,
-   explain:"<p>ANY = true for at least one value, so <code>= ANY(...)</code> is identical to <code>IN(...)</code>.</p>"},
-  {type:"mcq",q:"Why does <code>NOT standard_price &lt; ANY (...)</code> give the maximum value?",
-   opts:["because it sums the values","because the max is not smaller than any other value","because ANY ignores NULLs","it actually gives the minimum"],correct:1,
-   explain:"<p>The maximum is the one value that is <b>not smaller than any</b> other in the set.</p>"},
+   explain:"<p>ANY checks if a condition matches at least one item, making <code>= ANY(...)</code> identical to <code>IN(...)</code>.</p>"},
+  {type:"mcq",q:"Why does <code>NOT standard_price &lt; ANY (...)</code> find the maximum value?",
+   opts:["Because it sums all values together","Because the maximum value is not smaller than any other value in the group","Because ANY skips NULL fields","It actually finds the minimum value instead"],correct:1,
+   explain:"<p>The highest number is the only value that is never smaller than any other number in the set.</p>"},
 ]},
-{title:"Subqueries in FROM & SELECT",sub:"Subquery result used as a table or single value.",questions:[
-  {type:"fill",q:"Subquery in FROM: find any desk with standard_price below 100.",
+{title:"Subqueries in FROM & SELECT",sub:"Using query outputs as a temporary table or a single cell value.",questions:[
+  {type:"fill",q:"Subquery in FROM clause: find any desk item with a standard_price below 100.",
    template:"SELECT *\nFROM (SELECT * FROM product\n      WHERE description @@ \"%DESK%\") AS deskproduct\nWHERE standard_price < 100;",
    blanks:[["like"]],
-   explain:"<p><code>LIKE \"%DESK%\"</code> matches any description containing DESK. A FROM-subquery must have an alias (here <code>deskproduct</code>).</p>"},
-  {type:"fill",q:"Subquery in FROM: ordered items with total between 55 and 190.",
-   template:"SELECT *\nFROM (SELECT od.order_id, p.id AS product_id, description,\n             quantity * standard_price AS total\n      FROM order_detail AS od, product AS p\n      WHERE p.id = od.product_id) AS t\nWHERE t.total @@ 55 @@ 190;",
+   explain:"<p><code>LIKE \"%DESK%\"</code> searches for text containing the word DESK. Subqueries used inside a FROM clause must always have an alias name (like <code>deskproduct</code>).</p>"},
+  {type:"fill",q:"Subquery in FROM clause: find ordered items with total price values between 55 and 190.",
+   template:"SELECT *\nFROM (SELECT od.order_id, p.id AS product_id, description,\n              quantity * standard_price AS total\n      FROM order_detail AS od, product AS p\n      WHERE p.id = od.product_id) AS t\nWHERE t.total @@ 55 @@ 190;",
    blanks:[["between"],["and"]],
-   explain:"<p><code>BETWEEN 55 AND 190</code> is inclusive of both ends.</p>"},
-  {type:"mcq",q:"A subquery in the SELECT clause must...",
-   opts:["return many rows","return exactly one (scalar) value","use GROUP BY","contain a join"],correct:1,
-   explain:"<p>A SELECT-list subquery must return a single value or it errors.</p>"},
-  {type:"fill",q:"Show all products; for NULL prices, display the minimum price as TEMP_PRICE (subquery in SELECT).",
+   explain:"<p><code>BETWEEN 55 AND 190</code> includes both numbers in the range check.</p>"},
+  {type:"mcq",q:"A subquery used inside a SELECT clause must:",
+   opts:["Return many rows and columns","Return exactly one single scalar value","Always contain a GROUP BY clause","Contain an outer join connector"],correct:1,
+   explain:"<p>A subquery in the SELECT list can only return a single cell value per row, otherwise it causes an error.</p>"},
+  {type:"fill",q:"Show all products. For products with missing prices, display the lowest overall price as a backup column (Subquery in SELECT).",
    template:"SELECT * ,\n   (SELECT @@(standard_price) FROM product) AS temp_price\nFROM product AS p\nWHERE @@(standard_price);",
    blanks:[["min"],["isnull"]],
-   explain:"<p><code>MIN()</code> gets the lowest price; <code>ISNULL()</code> filters to the NULL-priced rows.</p>"},
-  {type:"mcq",q:"What is the syntax of MySQL's <code>IF()</code> function?",
-   opts:["IF(value, condition)","IF(condition, value_if_true, value_if_false)","IF condition THEN ... END IF","IF(true/false)"],correct:1,
-   explain:"<p><code>IF(condition, true_result, false_result)</code> returns one value based on the condition.</p>"},
+   explain:"<p><code>MIN()</code> finds the lowest price; <code>ISNULL()</code> checks for missing price values.</p>"},
+  {type:"mcq",q:"What is the correct structure of the <code>IF()</code> function in MySQL?",
+   opts:["IF(value, condition)","IF(condition, value_if_true, value_if_false)","IF condition THEN ... END IF","IF(true_or_false_statement)"],correct:1,
+   explain:"<p>The format is <code>IF(test_condition, what_to_return_if_true, what_to_return_if_false)</code>.</p>"},
 ]},
-{title:"Set Operators",sub:"UNION, EXCEPT, INTERSECT.",questions:[
-  {type:"mcq",q:"By default, <code>UNION</code>...",
-   opts:["keeps duplicate rows","removes duplicate rows","only joins two columns","sorts ascending"],correct:1,
-   explain:"<p>UNION removes duplicates; use <code>UNION ALL</code> to keep them.</p>"},
-  {type:"fill",q:"Rows in Customer that are NOT in Customer_1 (set difference).",
+{title:"Set Operators",sub:"Combining query results using UNION, EXCEPT, and INTERSECT.",questions:[
+  {type:"mcq",q:"What does the default <code>UNION</code> command do?",
+   opts:["Keeps all duplicate rows in the combined output","Removes all duplicate rows automatically","Combines columns instead of rows","Sorts everything in ascending order"],correct:1,
+   explain:"<p>UNION filters out duplicate matching rows. Use <code>UNION ALL</code> if you want to keep duplicates.</p>"},
+  {type:"fill",q:"Find rows that exist in the Customer table but are NOT present in the Customer_1 table.",
    template:"SELECT * FROM customer\n@@\nSELECT * FROM customer_1;",
    blanks:[["except","minus"]],
-   explain:"<p><code>EXCEPT</code> returns rows in the first query but not the second.</p>"},
-  {type:"fill",q:"Names present in BOTH Customer and Customer_1.",
+   explain:"<p><code>EXCEPT</code> returns rows found in the first query that do not appear in the second query.</p>"},
+  {type:"fill",q:"Find names that appear in BOTH the Customer table and the Customer_1 table.",
    template:"SELECT name FROM customer\n@@\nSELECT name FROM customer_1;",
    blanks:[["intersect"]],
-   explain:"<p><code>INTERSECT</code> returns rows common to both result sets.</p>"},
-  {type:"fill",q:"EXERCISE: names of customers who ordered any desk OR any chair — fill the set operator.",
+   explain:"<p><code>INTERSECT</code> returns only the shared rows that exist in both datasets.</p>"},
+  {type:"fill",q:"Find names of customers who ordered a desk OR a chair. Complete the set operator block.",
    template:"SELECT c.name\nFROM customer c JOIN order_t o ON c.id=o.customer_id\nJOIN order_detail od ON o.id=od.order_id\nJOIN product p ON od.product_id=p.id\nWHERE p.description LIKE \"%desk%\"\n@@\nSELECT c.name\nFROM customer c JOIN order_t o ON c.id=o.customer_id\nJOIN order_detail od ON o.id=od.order_id\nJOIN product p ON od.product_id=p.id\nWHERE p.description LIKE \"%chair%\";",
    blanks:[["union"]],
-   explain:"<p>OR between two groups → combine with <code>UNION</code>.</p>"},
-  {type:"mcq",q:"To get customers who ordered a desk AND a chair, which approach fits?",
-   opts:["UNION the two groups","INTERSECT the two groups (or IN against the chair group)","EXCEPT the two groups","a single WHERE with OR"],correct:1,
-   explain:"<p>AND = common to both → <code>INTERSECT</code>, or filter with <code>IN (chair group)</code>.</p>"},
-  {type:"mcq",q:"Customers who ordered a desk but NOT a chair is best done with...",
-   opts:["UNION","INTERSECT","EXCEPT / NOT IN the chair group","CROSS JOIN"],correct:2,
-   explain:"<p>\"But not\" = set difference → <code>EXCEPT</code>, or <code>NOT IN (chair group)</code>.</p>"},
+   explain:"<p>To combine results from two groups where either condition can be true, use <code>UNION</code>.</p>"},
+  {type:"mcq",q:"To find customers who ordered BOTH a desk AND a chair, which tool should you use?",
+   opts:["Use a default UNION query","Use an INTERSECT operator between the two separate query blocks","Use an EXCEPT operator block","Use a single WHERE clause with an OR statement"],correct:1,
+   explain:"<p>AND requires the customer to exist in both groups, so use <code>INTERSECT</code> or a nested subquery.</p>"},
+  {type:"mcq",q:"How do you find customers who ordered a desk but did NOT order a chair?",
+   opts:["Combine them with a UNION operator","Use an INTERSECT query","Use the EXCEPT operator or filter out the chair group using NOT IN","Run a default CROSS JOIN query"],correct:2,
+   explain:"<p>To find items in one list but exclude items from another, use <code>EXCEPT</code> or <code>NOT IN</code>.</p>"},
 ]},
-{title:"Aggregation, GROUP BY & HAVING",sub:"Functions that collapse many rows into a scalar.",questions:[
-  {type:"mcq",q:"Which list is the five core aggregate functions?",
+{title:"Aggregation, GROUP BY & HAVING",sub:"Functions used to calculate summary data from groups of rows.",questions:[
+  {type:"mcq",q:"Which list contains the five core SQL aggregate calculation functions?",
    opts:["TOP, BOTTOM, MID, AVG, SUM","COUNT, SUM, AVG, MAX, MIN","ADD, SUB, MUL, DIV, MOD","FIRST, LAST, NEXT, PREV, NOW"],correct:1,
-   explain:"<p>COUNT, SUM, AVG, MAX, MIN.</p>"},
-  {type:"mcq",q:"How does <code>COUNT(state)</code> differ from <code>COUNT(*)</code>?",
-   opts:["No difference","COUNT(state) ignores NULL states; COUNT(*) counts all rows","COUNT(*) ignores NULLs","COUNT(state) counts columns"],correct:1,
-   explain:"<p><code>COUNT(column)</code> skips NULLs; <code>COUNT(*)</code> counts every row.</p>"},
-  {type:"mcq",q:"<code>GROUP BY</code> causes aggregate functions to run...",
-   opts:["once over the whole table","once per group of the listed column(s)","never","only with ORDER BY"],correct:1,
-   explain:"<p>It categorises rows into groups; the aggregate is computed per group.</p>"},
-  {type:"mcq",q:"Which statement about WHERE vs HAVING is correct?",
-   opts:["WHERE filters groups after aggregation","HAVING filters rows before grouping","WHERE filters rows before grouping (no aggregates); HAVING filters groups after (can use aggregates)","They are interchangeable"],correct:2,
-   explain:"<p>WHERE = row filter before grouping; HAVING = group filter after, and may reference aggregates.</p>"},
-  {type:"fill",q:"Fill the six clauses of an aggregation query in order.",
+   explain:"<p>The core functions are COUNT, SUM, AVG, MAX, and MIN.</p>"},
+  {type:"mcq",q:"What is the difference between <code>COUNT(state)</code> and <code>COUNT(*)</code>?",
+   opts:["There is no difference at all","COUNT(state) skips rows where state is NULL; COUNT(*) counts every single row","COUNT(*) skips rows with empty values","COUNT(state) counts column structures instead of records"],correct:1,
+   explain:"<p>Counting a specific column name skips NULL fields, while asterisk <code>(*)</code> counts every record regardless of empty values.</p>"},
+  {type:"mcq",q:"What does adding a <code>GROUP BY</code> clause do to aggregate functions?",
+   opts:["It makes them run only once for the whole table summary","It makes the function calculate a separate value for each distinct category group","It disables aggregate functions","It can only be used if you also add an ORDER BY sorting clause"],correct:1,
+   explain:"<p>It splits data into category buckets and calculates the summary separately for each group.</p>"},
+  {type:"mcq",q:"Which statement about the difference between WHERE and HAVING is correct?",
+   opts:["WHERE filters group calculations after they are grouped together","HAVING filters rows before grouping happens","WHERE filters individual rows before grouping (no aggregates); HAVING filters group summaries after grouping (can use aggregates)","They can be swapped and used interchangeably"],correct:2,
+   explain:"<p>WHERE filters individual rows before groups are made. HAVING filters grouped outputs and can check summary math results.</p>"},
+  {type:"fill",q:"Arrange the six standard clauses of a query containing group functions in the correct execution order.",
    template:"SELECT aggregation\n@@ list_table\n@@ condition\n@@ list_attribute\n@@ condition\n@@ list_attribute;",
    blanks:[["from"],["where"],["group by"],["having"],["order by"]],
-   explain:"<p>SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY.</p>"},
-  {type:"fill",q:"How many customers are in each state?",
+   explain:"<p>The absolute order of clauses is: SELECT &rarr; FROM &rarr; WHERE &rarr; GROUP BY &rarr; HAVING &rarr; ORDER BY.</p>"},
+  {type:"fill",q:"Count how many customers live in each individual state.",
    template:"SELECT state, @@(state)\nFROM customer\n@@ state;",
    blanks:[["count"],["group by"]],
-   explain:"<p>Group by state, then COUNT within each group.</p>"},
-  {type:"fill",q:"Total quantity ordered of each product.",
+   explain:"<p>Group the records by state, then use <code>COUNT</code> to calculate totals inside each state bucket.</p>"},
+  {type:"fill",q:"Find the total ordered quantity calculated for each individual product ID.",
    template:"SELECT p.id, description, @@(quantity)\nFROM order_detail AS od JOIN product AS p\nON od.product_id = p.id\n@@ p.id;",
    blanks:[["sum"],["group by"]],
-   explain:"<p>SUM the quantity per product id.</p>"},
-  {type:"fill",q:"Average price per finish category, rounded to 2 decimals.",
+   explain:"<p>Use <code>SUM</code> on quantities while grouping rows by product IDs.</p>"},
+  {type:"fill",q:"Find the average price for each finish category, rounded to two decimal places.",
    template:"SELECT finish, ROUND(@@(standard_price), 2)\nFROM product\n@@ finish;",
    blanks:[["avg"],["group by"]],
-   explain:"<p>AVG within each finish group, wrapped in ROUND(...,2).</p>"},
-  {type:"fill",q:"Per finish, the minimum price — but only finishes whose minimum is below 100.",
+   explain:"<p>Calculate <code>AVG</code> for each finish category group and wrap it inside a ROUND function layer.</p>"},
+  {type:"fill",q:"Find the lowest price per finish category, but only display categories where that minimum price is lower than 100.",
    template:"SELECT finish, MIN(standard_price)\nFROM product\nGROUP BY finish\n@@ MIN(standard_price) < 100;",
    blanks:[["having"]],
-   explain:"<p>Filtering on an aggregate of a group needs <code>HAVING</code>, not WHERE.</p>"},
-  {type:"fill",q:"EXERCISE: number of orders made in each month (e.g. April 2004 → 10).",
+   explain:"<p>To filter on the result of an aggregate function like MIN(), you must use <code>HAVING</code> instead of WHERE.</p>"},
+  {type:"fill",q:"Calculate the number of orders placed in each calendar month.",
    template:"SELECT @@(order_date) AS month, @@(order_date) AS year,\n       COUNT(*) AS order_count\nFROM order_t\nGROUP BY month, year;",
    blanks:[["monthname"],["year"]],
-   explain:"<p><code>MONTHNAME()</code> + <code>YEAR()</code> let you group by calendar month.</p>"},
-  {type:"fill",q:"EXERCISE: product(s) with the cheapest standard price (aggregation in a subquery).",
+   explain:"<p><code>MONTHNAME()</code> and <code>YEAR()</code> allow you to group calculations by calendar months and years.</p>"},
+  {type:"fill",q:"Find the product or products that have the absolute lowest price (using a nested query calculation).",
    template:"SELECT *\nFROM product\nWHERE standard_price @@ (\n   SELECT @@(standard_price) FROM product);",
    blanks:[["in","="],["min"]],
-   explain:"<p>Compare each price against the <code>MIN()</code> from a subquery.</p>"},
+   explain:"<p>Compare each row price against the single lowest value found by the <code>MIN()</code> subquery block.</p>"},
 ]},
-{title:"RANK() Window Function",sub:"Ranking rows within an ordered set.",questions:[
-  {type:"fill",q:"Complete the RANK() that ranks products per finish by total quantity (highest first).",
+{title:"RANK() Window Function",sub:"Assigning order ranks to individual data rows inside a group.",questions:[
+  {type:"fill",q:"Complete the RANK() statement to rank items inside each finish category by total quantity (highest to lowest).",
    template:"SELECT *,\n   RANK() @@ (@@ finish @@ total_qty DESC) AS salerank\nFROM ( SELECT p.*, SUM(quantity) AS total_qty\n       FROM product AS p JOIN order_detail AS od\n       ON p.id = od.product_id\n       GROUP BY p.id ) AS t;",
    blanks:[["over"],["partition by"],["order by"]],
-   explain:"<p><code>RANK() OVER (PARTITION BY finish ORDER BY total_qty DESC)</code>.</p>"},
-  {type:"mcq",q:"Adding <code>PARTITION BY finish</code> to RANK() does what?",
-   opts:["sorts the whole table","restarts the ranking within each finish group","removes duplicates","filters NULLs"],correct:1,
-   explain:"<p>Each finish gets its own ranking starting at 1.</p>"},
-  {type:"mcq",q:"Two rows tie for the top total_qty. With RANK(), they're both rank 1. The next row gets rank...",
-   opts:["2","1","3","0"],correct:2,
-   explain:"<p>RANK() skips numbers after ties — the next rank is 3, not 2.</p>"},
+   explain:"<p>The standard pattern uses <code>RANK() OVER (PARTITION BY finish ORDER BY total_qty DESC)</code>.</p>"},
+  {type:"mcq",q:"What does adding <code>PARTITION BY finish</code> do to a RANK() function?",
+   opts:["Sorts the entire database table layout","Resets the rank counter back to 1 for each separate finish category group","Deletes duplicate records from the output rows","Removes rows containing NULL fields"],correct:1,
+   explain:"<p>Each distinct finish category gets its own localized rank counter list starting from 1.</p>"},
+  {type:"mcq",q:"If two items tie for rank 1 using the RANK() function, what rank number does the next item get?",
+   opts:["Rank 2","Rank 1","Rank 3","Rank 0"],correct:2,
+   explain:"<p>The default RANK() function skips rank positions after a tie. The next number will jump to 3, skipping position 2.</p>"},
 ]},
-{title:"Date Functions",sub:"Working with dates and times.",questions:[
-  {type:"mcq",q:"Which functions return the current date AND time?",
+{title:"Date Functions",sub:"Working with calendar dates and timestamps.",questions:[
+  {type:"mcq",q:"Which functions return both the current calendar date and the current system clock time?",
    opts:["CURDATE(), CURTIME()","SYSDATE(), CURRENT_TIMESTAMP(), NOW()","YEAR(), MONTH()","DATE(), DAY()"],correct:1,
-   explain:"<p>SYSDATE(), CURRENT_TIMESTAMP(), and NOW() all give date+time. CURDATE()/CURTIME() give just date/time.</p>"},
-  {type:"fill",q:"Find all orders placed within the last 5 days, using DATE_SUB.",
+   explain:"<p>SYSDATE(), CURRENT_TIMESTAMP(), and NOW() return full date + time values. CURDATE() only returns the date portion.</p>"},
+  {type:"fill",q:"Find all orders placed within the last 5 days using the DATE_SUB function.",
    template:"SELECT *\nFROM order_t\nWHERE @@(CURDATE(), INTERVAL 5 DAY) <= order_date\n  AND order_date <= CURDATE();",
    blanks:[["date_sub"]],
-   explain:"<p><code>DATE_SUB(CURDATE(), INTERVAL 5 DAY)</code> gives the date 5 days ago.</p>"},
-  {type:"fill",q:"Same \"last 5 days\" query, but using DATEDIFF instead.",
+   explain:"<p><code>DATE_SUB(CURDATE(), INTERVAL 5 DAY)</code> calculates the date exactly 5 days ago from today.</p>"},
+  {type:"fill",q:"Find the same 'last 5 days' orders, but use the DATEDIFF function instead.",
    template:"SELECT *\nFROM order_t\nWHERE @@(CURDATE(), order_date) <= 5;",
    blanks:[["datediff"]],
-   explain:"<p><code>DATEDIFF(date1, date2)</code> returns the number of days between two dates.</p>"},
-  {type:"mcq",q:"<code>DATE_FORMAT('2024-05-15 12:45:00', '%M %e,%Y %h:%i %p')</code> produces...",
-   opts:["2024-05-15","May 15,2024 12:45 PM","15/05/2024","12:45:00"],correct:1,
-   explain:"<p>DATE_FORMAT customises display → <b>May 15,2024 12:45 PM</b>.</p>"},
+   explain:"<p><code>DATEDIFF(date1, date2)</code> calculates the direct number of days between two calendar dates.</p>"},
+  {type:"mcq",q:"What does the function expression <code>DATE_FORMAT('2024-05-15 12:45:00', '%M %e,%Y %h:%i %p')</code> output?",
+   opts:["'2024-05-15'","'May 15,2024 12:45 PM'","'15/05/2024'","'12:45:00'"],correct:1,
+   explain:"<p>DATE_FORMAT changes date structures into custom text strings, outputting <b>May 15,2024 12:45 PM</b> here.</p>"},
 ]},
-{title:"String Functions",sub:"Manipulating text values.",questions:[
-  {type:"mcq",q:"Which function REMOVES leading and trailing spaces?",
+{title:"String Functions",sub:"Cleaning and modifying text column data.",questions:[
+  {type:"mcq",q:"Which function removes empty leading and trailing spaces from a text string?",
    opts:["SUBSTRING()","TRIM()","REPLACE()","LENGTH()"],correct:1,
-   explain:"<p><code>TRIM(str)</code> strips leading/trailing spaces.</p>"},
-  {type:"fill",q:"Show each customer's full address as one column joined by \" , \".",
+   explain:"<p><code>TRIM(string)</code> deletes blank trailing or leading spaces around a text value.</p>"},
+  {type:"fill",q:"Combine the address, city, state, and zip code text parts into one column separated by commas.",
    template:"SELECT @@(address, \" , \", city, \" , \",\n              state, \" , \", postal_code) AS address\nFROM customer;",
    blanks:[["concat"]],
-   explain:"<p><code>CONCAT()</code> glues the pieces into one string.</p>"},
-  {type:"mcq",q:"<code>SUBSTRING(\"Richard Newman\", 1, 2)</code> returns...",
+   explain:"<p><code>CONCAT()</code> glues multiple separate text strings together into one continuous line.</p>"},
+  {type:"mcq",q:"What value does the function expression <code>SUBSTRING(\"Richard Newman\", 1, 2)</code> return?",
    opts:["\"Ri\"","\"Newman\"","\"ch\"","\"R\""],correct:0,
-   explain:"<p>Start at position 1, take 2 characters → \"Ri\".</p>"},
-  {type:"fill",q:"Display the finish column with every \"White\" replaced by \"BLACK\".",
+   explain:"<p>Start at text index position 1 and extract exactly 2 letters, returning \"Ri\".</p>"},
+  {type:"fill",q:"Display the finish column, but swap any instance of the word 'White' with the word 'BLACK'.",
    template:"SELECT @@(finish, \"White\", \"BLACK\") FROM product;",
    blanks:[["replace"]],
-   explain:"<p><code>REPLACE(str, old, new)</code> swaps every occurrence.</p>"},
-  {type:"mcq",q:"To permanently change stored values with a string function, you use...",
-   opts:["SELECT","UPDATE ... SET","ALTER","CREATE"],correct:1,
-   explain:"<p>Use the function inside an <code>UPDATE ... SET</code> statement to modify the data.</p>"},
+   explain:"<p><code>REPLACE(text, old_word, new_word)</code> searches for and swaps matching text segments.</p>"},
+  {type:"mcq",q:"To save text changes permanently in a database table using string functions, you combine them with:",
+   opts:["A default SELECT statement block","An UPDATE ... SET statement block","An ALTER TABLE schema statement","A CREATE TABLE setup statement"],correct:1,
+   explain:"<p>You must use the function inside an <code>UPDATE ... SET</code> block to change actual table row files on disk.</p>"},
 ]},
-{title:"Views",sub:"Virtual tables based on a stored SELECT.",questions:[
-  {type:"mcq",q:"A view is best described as...",
-   opts:["a physical copy of a table on disk","a virtual table = a stored SELECT, holding no data of its own","an index","a backup file"],correct:1,
-   explain:"<p>A view stores the query, not the data; it always reflects current base-table data.</p>"},
-  {type:"mcq",q:"Which is NOT a stated advantage of views?",
-   opts:["Simplify complex queries","Security / restrict access","Faster disk than tables because they store data","Logical data independence"],correct:2,
-   explain:"<p>Views store no data, so \"faster storage\" isn't an advantage. The real ones: simplification, security, abstraction, data independence.</p>"},
-  {type:"fill",q:"Create a simple view CUSTOMER_VIEW exposing only id, name, city.",
+{title:"Views",sub:"Creating virtual tables from saved SELECT statements.",questions:[
+  {type:"mcq",q:"What is the best description of a database View?",
+   opts:["A separate physical table clone stored on the hard drive disk","A virtual table that holds a saved SELECT query but stores no real data files of its own","An active index sorting layer","A database recovery backup file blueprint"],correct:1,
+   explain:"<p>A view stores only the query code rule. It reads live data directly from the primary tables every time you open it.</p>"},
+  {type:"mcq",q:"Which option is NOT a real benefit of using Views?",
+   opts:["Simplifying long, complex multi-table queries","Hiding sensitive columns or limiting data access permissions","Saving drive space or making lookups faster by caching copy files on disk","Providing logical data independence shapes"],correct:2,
+   explain:"<p>Because Views do not save separate physical data copies on disk, they do not save space or speed up disk reading files directly.</p>"},
+  {type:"fill",q:"Create a basic view named CUSTOMER_VIEW that only shows the ID, name, and city columns.",
    template:"@@ customer_view @@\nSELECT id, name, city FROM customer;",
    blanks:[["create view"],["as"]],
-   explain:"<p><code>CREATE VIEW name AS SELECT ...</code>.</p>"},
-  {type:"fill",q:"Create view ORDER_REPORT_V with renamed columns over a 4-table join.",
+   explain:"<p>The standard syntax code layout is: <code>CREATE VIEW view_name AS SELECT ...</code>.</p>"},
+  {type:"fill",q:"Create a view named ORDER_REPORT_V with custom column names running over a four-table connection join.",
    template:"CREATE VIEW order_report_v\n(customer, ordernumber, orderdate, product, price, qty, subtotal) @@\nSELECT name, order_id, order_date, description,\n       standard_price, quantity, quantity*standard_price\nFROM customer c JOIN order_t o JOIN order_detail ol JOIN product p\n@@ (c.id=o.customer_id AND o.id=ol.order_id AND ol.product_id=p.id)\nORDER BY name;",
    blanks:[["as"],["on"]],
-   explain:"<p>New column names go in parentheses after the view name, then <code>AS SELECT...</code>; the join condition follows <code>ON</code>.</p>"},
-  {type:"fill",q:"Query the view to get total sales per customer.",
+   explain:"<p>Custom column headers go inside parentheses immediately after the view name, followed by <code>AS SELECT...</code> and standard join connections using <code>ON</code>.</p>"},
+  {type:"fill",q:"Read from the created view to calculate total sales values for each customer name.",
    template:"SELECT customer, @@(subtotal) AS totalsales\nFROM order_report_v\n@@ customer;",
    blanks:[["sum"],["group by"]],
-   explain:"<p>A view is queried just like a table — SUM the subtotal grouped by customer.</p>"},
-  {type:"fill",q:"Drop the view safely (so no error if it's missing).",
+   explain:"<p>You can read from a view exactly like a normal table structure using <code>SUM</code> and <code>GROUP BY</code>.</p>"},
+  {type:"fill",q:"Delete the created view without causing an error if it does not exist.",
    template:"DROP VIEW order_report_v;\n@@ @@ order_report_v;",
    blanks:[["drop view"],["if exists"]],
-   explain:"<p><code>DROP VIEW IF EXISTS</code> avoids an error if the view is missing.</p>"},
-  {type:"mcq",q:"For a view to be UPDATABLE it must NOT contain...",
-   opts:["a single table","a WHERE clause","joins, aggregates, DISTINCT, GROUP BY, subqueries or UNION","column names"],correct:2,
-   explain:"<p>Updatable views must be a single table with no joins, aggregates, DISTINCT, GROUP BY, subqueries, UNION or calculations.</p>"},
-  {type:"mcq",q:"<code>WITH CHECK OPTION</code> on a view...",
-   opts:["makes the view read-only","rejects any INSERT/UPDATE that would create a row outside the view's WHERE condition","adds a checksum","speeds up queries"],correct:1,
-   explain:"<p>It enforces the view's WHERE filter on modifications, keeping the view consistent.</p>"},
-  {type:"mcq",q:"PPCUSTOMER = customers WHERE city='Phnom Penh' WITH CHECK OPTION. You insert a row with city 'Siem Reap'. Result?",
-   opts:["Inserted fine","Rejected — CHECK OPTION failed","Inserted but hidden","City auto-changes to Phnom Penh"],correct:1,
-   explain:"<p>'Siem Reap' violates the view's condition, so the insert is rejected.</p>"},
-  {type:"fill",q:"EXERCISE: create a view for products that cost less than 50.",
+   explain:"<p>Using <code>DROP VIEW IF EXISTS</code> prevents database script crashes if the file is already gone.</p>"},
+  {type:"mcq",q:"For a View to allow data changes (UPDATABLE), it must NOT contain which features?",
+   opts:["A reference to a single source table","An active WHERE filtering condition","Joins, aggregates, DISTINCT flags, GROUP BY groupings, nested subqueries, or UNION sets","Explicit column names listed in the SELECT line"],correct:2,
+   explain:"<p>To update database files through a view layout, the view must map directly to a single table with no calculations or joins.</p>"},
+  {type:"mcq",q:"What does the <code>WITH CHECK OPTION</code> rule do when added to a View?",
+   opts:["Forces the view file into a read-only locked file mode","Blocks any INSERT or UPDATE action that would create a row failing the view's WHERE filtering rule","Adds a automatic data calculation check value","Speeds up indexing lookups"],correct:1,
+   explain:"<p>It stops users from writing or modifying rows that would disappear from the view's own filtering settings.</p>"},
+  {type:"mcq",q:"PPCUSTOMER is a view for customers where city='Phnom Penh' WITH CHECK OPTION. What happens if you try to INSERT a row with city='Siem Reap'?",
+   opts:["The row is saved successfully with no issues","The save action is blocked because it fails the CHECK OPTION rule","The row is saved but hidden from all users","The city value is automatically changed to Phnom Penh"],correct:1,
+   explain:"<p>Because 'Siem Reap' violates the view's internal filter condition, the database engine blocks the input completely.</p>"},
+  {type:"fill",q:"Create a view named cheap_product for all items that cost less than 50 dollars.",
    template:"CREATE VIEW cheap_product AS\nSELECT * FROM product\n@@ standard_price < 50;",
    blanks:[["where"]],
-   explain:"<p>Filter the rows with <code>WHERE standard_price &lt; 50</code>.</p>"},
-]},
+   explain:"<p>Filter matching table items using a regular <code>WHERE standard_price &lt; 50</code> clause layout.</p>"},
+ ] },
 ];
 
 
 /* ==========================================================================
-   ARCHITECTURAL INTERFACE ROUTER CONTROLLER ENGINE
+    INTERFACE CODE ENGINE CONTROLLER
    ========================================================================== */
 const KEYS=["A","B","C","D"];
 const $=id=>document.getElementById(id);
@@ -618,7 +618,7 @@ function selectMode(mode){
 }
 
 /* ==========================================================================
-   ENGINE MODULE 1: SIMULATED EXAM BLOCK
+    ENGINE MODULE 1: EXAM METHODS
    ========================================================================== */
 $('chips').addEventListener('click',e=>{
   const c=e.target.closest('.chip'); if(!c)return;
@@ -645,11 +645,11 @@ function shuffleDeck(a){
 function renderExamQuestion(){
   answered=false;
   const q=pool[i];
-  $('tag').textContent=q.t==="Intro"?"Intro Frameworks":q.t;
+  $('tag').textContent=q.t==="Intro"?"Intro Core Syntax":q.t;
   $('qpos').textContent=i+1;
   $('qscore').textContent=score;
   $('fill').style.width=((i)/pool.length*100)+"%";
-  $('qnum').textContent="QUESTION MATRIX SLOT "+String(i+1).padStart(2,'0');
+  $('qnum').textContent="QUESTION CARD SLOT "+String(i+1).padStart(2,'0');
   $('qtext').innerHTML=q.q;
   $('explain').classList.remove('show');
   $('next').classList.remove('show');
@@ -675,10 +675,10 @@ function evaluateExamPick(idx,btn){
     btn.classList.add('wrong'); missed.push(q);
   }
   const ex=$('explain');
-  ex.innerHTML="<b>"+(idx===q.a?"✓ Correct Analysis. ":"✗ Correct Verification Target: "+q.o[q.a]+". ")+"</b>"+q.e;
+  ex.innerHTML="<b>"+(idx===q.a?"✓ Correct Answer. ":"✗ Correct choice was: "+q.o[q.a]+". ")+"</b>"+q.e;
   ex.classList.add('show');
   $('fill').style.width=((i+1)/pool.length*100)+"%";
-  const nx=$('next'); nx.textContent=(i===pool.length-1)?"Complete Session \u2192":"Progress Next Structural Slot \u2192";
+  const nx=$('next'); nx.textContent=(i===pool.length-1)?"Finish Practice Deck \u2192":"Next Question Slot \u2192";
   nx.classList.add('show');
 }
 
@@ -696,13 +696,13 @@ function displayExamAnalytics(){
   setTimeout(()=>{arc.style.strokeDashoffset=C-(C*pct/100);},120);
   
   let v,s;
-  if(pct>=80){v="Architect Matrix Standard Cleared.";s="Strong baseline resolution. Review edge exclusions and take rest.";}
-  else if(pct>=60){v="Operational Readiness Near.";s="Solid foundational mapping. Remediate isolated compilation flags below.";}
-  else{v="Sustained Revision Required.";s="Trace execution breakdowns systematically via logs and run it again.";}
+  if(pct>=80){v="Excellent Work!";s="You have a strong understanding of SQL commands. Keep it up!";}
+  else if(pct>=60){v="Good Effort!";s="Solid foundation. Review the incorrect questions below to perfect your score.";}
+  else{v="More Practice Needed.";s="Take your time, read the solutions carefully, and try the test deck again.";}
   
   $('r-verdict').textContent=v; $('r-sub').textContent=s;
   
-  const cats=["Intro","DDL","DML"], names={Intro:"Intro To SQL Syntax",DDL:"DDL Schema Controls",DML:"DML Execution Pipelines"};
+  const cats=["Intro","DDL","DML"], names={Intro:"Basic Syntax Foundations",DDL:"DDL Table Management",DML:"DML Execution Actions"};
   const bd=$('bd'); bd.innerHTML="";
   cats.forEach(c=>{
     const tot=pool.filter(q=>q.t===c).length; if(!tot)return;
@@ -733,9 +733,9 @@ $('again').onclick=()=>{ buildExam(); switchView('quiz'); };
 $('home').onclick=()=>{ $('lab-scorebar').classList.remove('active'); switchView('start'); };
 
 /* ==========================================================================
-   ENGINE MODULE 2: CODEFILL INTERACTIVE LAB
+    ENGINE MODULE 2: CODE LAB METHODS
    ========================================================================== */
-const typeMeta={fill:{cls:"fill-type",lbl:"Compile Missing SQL Syntax"},mcq:{cls:"mcq-type",lbl:"Conceptual Compilation Check"}};
+const typeMeta={fill:{cls:"fill-type",lbl:"Complete Missing Code Syntax"},mcq:{cls:"mcq-type",lbl:"Conceptual Question Check"}};
 function normString(s){ return (s||'').toLowerCase().replace(/[`'"]/g,'').replace(/;/g,'').replace(/\s+/g,'').trim(); }
 
 function buildInteractiveLab(){
@@ -746,7 +746,7 @@ function buildInteractiveLab(){
   SECTIONS_M2.forEach((sec,si)=>{
     const secEl=document.createElement('div');
     secEl.className='lab-section-block';
-    secEl.innerHTML=`<div class="section-heading"><span>MODULE COMPONENT LAYER ${String(si+1).padStart(2,'0')}</span><h2>${sec.title}</h2></div><p style="font-size:13.5px; color:var(--ink-soft); margin-bottom:16px; padding-left:2px;">${sec.sub}</p>`;
+    secEl.innerHTML=`<div class="section-heading"><span>STUDY SECTION GROUP ${String(si+1).padStart(2,'0')}</span><h2>${sec.title}</h2></div><p style="font-size:13.5px; color:var(--ink-soft); margin-bottom:16px; padding-left:2px;">${sec.sub}</p>`;
     
     sec.questions.forEach(qd=>{
       absoluteQuestionCounter++;
@@ -791,15 +791,15 @@ function buildInteractiveLab(){
       }
       
       const actionRow=document.createElement('div'); actionRow.className='action-row';
-      const chkBtn=document.createElement('button'); chkBtn.className='btn-check'; chkBtn.textContent='Run Integrity Check'; chkBtn.onclick=()=>checkLabQuestion(qid,qd);
-      const solBtn=document.createElement('button'); solBtn.className='btn-sol'; solBtn.textContent='Inject Solution'; solBtn.onclick=()=>injectLabSolution(qid,qd);
+      const chkBtn=document.createElement('button'); chkBtn.className='btn-check'; chkBtn.textContent='Check My Answer'; chkBtn.onclick=()=>checkLabQuestion(qid,qd);
+      const solBtn=document.createElement('button'); solBtn.className='btn-sol'; solBtn.textContent='Show Solution'; solBtn.onclick=()=>injectLabSolution(qid,qd);
       const verdTxt=document.createElement('span'); verdTxt.className='verdict-text'; verdTxt.id=`verd-${qid}`;
       
       actionRow.appendChild(chkBtn); actionRow.appendChild(solBtn); actionRow.appendChild(verdTxt);
       innerWrap.appendChild(actionRow);
       
       const expl=document.createElement('div'); expl.className='explain'; expl.id=`expl-${qid}`;
-      expl.innerHTML=`<div class="label" style="margin-top:14px; margin-bottom:4px; font-size:11px;">RELATIONAL COMPILATION ANALYSIS LOG</div>${qd.explain}`;
+      expl.innerHTML=`<div class="label" style="margin-top:14px; margin-bottom:4px; font-size:11px;">EXPLANATION ANALYSIS LOG</div>${qd.explain}`;
       innerWrap.appendChild(expl);
       
       card.appendChild(innerWrap);
@@ -834,10 +834,10 @@ function checkLabQuestion(qid,qd){
         allRight=false;
       }
     });
-    if(!filledAny && dynamicInputs.length>0){ flashLabVerdictString(qid,'Buffer empty. Input code string sequence.',false); return; }
+    if(!filledAny && dynamicInputs.length>0){ flashLabVerdictString(qid,'Input fields are empty. Please type your code.',false); return; }
   } else {
     const activePick=document.querySelector(`li.pick[data-qid="${qid}"]`);
-    if(!activePick){ flashLabVerdictString(qid,'Assign context selection constraint vector.',false); return; }
+    if(!activePick){ flashLabVerdictString(qid,'Please choose an answer choice first.',false); return; }
     const ulContainer=activePick.closest('.lab-opts');
     ulContainer.querySelectorAll('li').forEach(li=>li.classList.remove('ok','no'));
     const targetedIdx=+activePick.dataset.i;
@@ -871,9 +871,9 @@ function finalizeLabCardEvaluationState(qid,stateFlag){
   
   $(`expl-${qid}`).classList.add('show');
   const verdictLabel=$(`verd-${qid}`); verdictLabel.classList.remove('ok','no');
-  if(stateFlag==='correct'){ verdictLabel.classList.add('ok'); verdictLabel.textContent='✓ Pipeline Integrated'; }
-  else if(stateFlag==='wrong') { verdictLabel.classList.add('no'); verdictLabel.textContent='✗ Compilation Halt — See Log'; }
-  else { verdictLabel.style.color='var(--ink-faint)'; verdictLabel.textContent='Syntax Structure Injected'; }
+  if(stateFlag==='correct'){ verdictLabel.classList.add('ok'); verdictLabel.textContent='✓ Correct Syntax'; }
+  else if(stateFlag==='wrong') { verdictLabel.classList.add('no'); verdictLabel.textContent='✗ Incorrect Code Entry'; }
+  else { verdictLabel.style.color='var(--ink-faint)'; verdictLabel.textContent='Solution Code Filled'; }
   updateLabProgressionScore();
 }
 
@@ -890,7 +890,7 @@ function updateLabProgressionScore(){
 }
 
 /* ==========================================================================
-   GLOBAL ENGINE CONTROLS KEYBOARD HOOK SYSTEMS
+    KEYBOARD EVENT BINDINGS
    ========================================================================== */
 document.addEventListener('keydown',e=>{
   if($('quiz').classList.contains('active')){
