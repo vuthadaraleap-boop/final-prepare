@@ -1,10 +1,12 @@
-<div class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Interactive Web Engineering Comprehensive Review Quiz Portal containing all cross-disciplinary questions shuffled into a single master exam node.</div>
+<div class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">
+  Review</div>
 
 <div id="app" style="padding: 2.5rem 2rem; background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1); max-width: 600px; margin: 0 auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #F8FAFC;"></div>
 
 <script>
-const SOURCE_QUIZZES = {
+const QUIZZES = {
   q1: {
+    title: "Quiz 1: Introduction to UI/UX", 
     questions: [
       {q:"Which statement correctly explains the relationship between UI and UX?",o:["UI is more important than UX","UI is how it looks, UX is how it feels and works","UI and UX are the same","UI focuses on experience; UX focuses on appearance"],c:1},
       {q:"Which design pattern is most common for reading blocks of text?",o:["Z-Pattern","F-Pattern","X-Pattern","L-Pattern"],c:1},
@@ -29,6 +31,7 @@ const SOURCE_QUIZZES = {
     ]
   },
   q2: {
+    title: "Quiz 2: UI Design & Figma",
     questions: [
       {q:"What color is commonly associated with trust and professionalism?",o:["Red","Blue","Yellow","Orange"],c:1},
       {q:"What role does color play in UI design?",o:["It determines loading speed","It replaces text","It highlights important areas and guides the user's eye","It only makes design look pretty"],c:2},
@@ -53,6 +56,7 @@ const SOURCE_QUIZZES = {
     ]
   },
   q3: {
+    title: "Quiz 3: HTML Fundamentals",
     questions: [
       {q:"Which attribute provides alternative text for images?",o:["title","text","description","alt"],c:3},
       {q:"Which tag creates a password field?",o:["<input type='password'>","<password>","<pass>","<input type='secret'>"],c:0},
@@ -87,6 +91,7 @@ const SOURCE_QUIZZES = {
     ]
   },
   q4: {
+    title: "Quiz 4: CSS Styling",
     questions: [
       {q:"In the box model, what is the area outside the border?",o:["Outline","Padding","Spacing","Margin"],c:3},
       {q:"What is the default value of float?",o:["both","left","none","right"],c:2},
@@ -121,6 +126,7 @@ const SOURCE_QUIZZES = {
     ]
   },
   q5: {
+    title: "Quiz 5: Responsive Layouts",
     questions: [
       {q:"What is Flexbox primarily for?",o:["Circular layouts","One-dimensional layouts","3D layouts","Database design"],c:1},
       {q:"What is CSS Grid primarily for?",o:["Two-dimensional layouts","3D graphics","Data storage","Form validation"],c:0},
@@ -143,65 +149,125 @@ const SOURCE_QUIZZES = {
       {q:"What is vw unit?",o:["Vertical width","View width (1% of viewport)","Variable width","Virtual width"],c:1},
       {q:"What is the main difference between Flexbox and Grid?",o:["Flexbox is newer","Flexbox is 1D, Grid is 2D","They're the same","Grid is older"],c:1}
     ]
+  },
+  q6: {
+    title: "Quiz 6: JavaScript Core Engine",
+    questions: [
+      {q:"Which operator is used for strict equality comparison?",o:["===","==","=","!=="],c:0},
+      {q:"What will console.log(5 != '5') output?",o:["false","undefined","TypeError","true"],c:0},
+      {q:"Which method creates a new array with all elements that pass a test?",o:["reduce()","map()","forEach()","filter()"],c:3},
+      {q:"What is the purpose of the for...in loop?",o:["Iterate over Map entries","Iterate over Set elements","Iterate over object keys (property names)","Iterate over array values"],c:2},
+      {q:"What does the map() method return?",o:["A new array of the same length","A single value","The original array modified","A boolean"],c:0},
+      {q:"What is the correct syntax for the spread operator in JavaScript?",o:["###","&&&","***","..."],c:3},
+      {q:"What will console.log(Boolean([])) output?",o:["null","true","false","undefined"],c:1},
+      {q:"Which of the following is NOT a popup box method?",o:["prompt()","confirm()","alert()","message()"],c:3},
+      {q:"Which array method reduces an array to a single value?",o:["filter()","map()","reduce()","forEach()"],c:2},
+      {q:"Which statement about const is correct?",o:["const is function-scoped","const variables must be initialized when declared","const variables can be reassigned","const variables can be redeclared in the same scope"],c:1},
+      {q:"What is the result of console.log(5 == '5')?",o:["true","TypeError","undefined","false"],c:0},
+      {q:"What will console.log(parseInt(\"hello\")) output?",o:["NaN","null","undefined","0"],c:0},
+      {q:"What will console.log(!\"true\") output?",o:["false","\"true\"","true","undefined"],c:0},
+      {q:"What does the slice() method do when called without arguments on an array?",o:["Creates a shallow copy of the entire array","Empties the array","Returns the last element","Returns the first element"],c:0},
+      {q:"What is the correct way to write an arrow function that returns the square of a number (single parameter)?",o:["Neither A nor B is correct","const square = (x) => x * x;","Both A and B are correct","const square = x => { return x * x; }"],c:2},
+      {q:"Which of the following correctly copies an array?",o:["All of the above","arr.slice()","[...arr]","Array.from(arr)"],c:0},
+      {q:"What is the result of console.log(1 + 2 + \"3\")?",oHandler: ["\"123\"","\"6\"","\"33\"",6],o:["\"123\"","\"6\"","\"33\"","6"],c:2},
+      {q:"What is the output of console.log(5 && 10 && 15)?",o:[10,15,true,5],o:["10","15","true","5"],c:1},
+      {q:"Which statement about let is correct?",o:["let is block-scoped","let variables are hoisted and can be accessed before declaration","let variables cannot be reassigned","let is function-scoped"],c:0},
+      {q:"What does the reduce() method require if the array might be empty?",o:["An initial value","A return statement","No parameters","A callback function only"],c:0}
+    ]
+  },
+  q7: {
+    title: "Quiz 7: DOM & Event Architecture",
+    questions: [
+      {q:"What is the difference between querySelectorAll and getElementsByClassName?",o:["querySelectorAll returns a static NodeList, getElementsByClassName returns a live HTMLCollection","No difference, both work the same","querySelectorAll returns a live HTMLCollection, getElementsByClassName returns a static NodeList","querySelectorAll only works with IDs"],c:0},
+      {q:"Which event fires when an input field loses focus?",o:["blur","input","change","focus"],c:0},
+      {q:"Which method removes focus from an element?",o:["element.unfocus()","element.loseFocus()","element.blur()","element.deselect()"],c:2},
+      {q:"How do you check if an element has a specific class?",o:["element.classList.contains('active')","element.className.includes('active')","element.containsClass('active')","element.hasClass('active')"],c:0},
+      {q:"What is the difference between insertBefore and before?",o:["insertBefore works with text only","insertBefore is called on the parent, before is called on the reference element","before is older and deprecated","No difference"],c:1},
+      {q:"What type of node is the <html> element in the DOM tree?",o:["Document Node","Text Node","Attribute Node","Element Node"],c:3},
+      {q:"Which method removes an event listener?",o:["element.deleteEventListener()","element.off()","element.detachEvent()","element.removeEventListener()"],c:3},
+      {q:"What is the correct way to add an event listener to an element?",o:["element.attachEvent('click', function() {})","element.addEventListener('click', function() {})","element.addEvent('click', function() {})","element.onEvent = function() {}"],c:1},
+      {q:"What type of node is the <html> element in the DOM tree? (Identical Context Node)",o:["Text Node","Attribute Node","Document Node","Element Node"],c:3},
+      {q:"Which property gives the mouse position relative to the target element?",o:["pageX","clientX","offsetX","screenX"],c:2},
+      {q:"What does the load event do?",o:["Fires when an element is created","Fires when the DOM is ready","Fires when the page and all resources have finished loading","Fires when a user loads a file"],c:2},
+      {q:"Where does 'afterend' insert content?",o:["Inside the element, after its children","Before the element itself","Inside the element, before its children","After the element itself"],c:3},
+      {q:"What happens if you try to remove an event listener with an anonymous function?",o:["It will not work because the function reference is different","It works normally","It will remove all listeners","It will throw an error"],c:0},
+      {q:"What is the advantage of addEventListener over onclick property?",o:["It allows multiple event handlers for the same event","It does not require a function","It is shorter to write","It only works with mouse events"],c:0},
+      {q:"Which event occurs when the mouse enters an element?",o:["mousedown","mouseover","mouseenter","mouseleave"],c:2},
+      {q:"What happens if you use innerHTML with user-generated content?",o:["It will not change the DOM","It may create a security risk (XSS attack)","It is always safe","It will automatically escape HTML tags"],c:1},
+      {q:"What is the correct way to set multiple styles at once?",o:["element.styles.add(\"color: red; font-size: 20px;\")","element.setStyles(\"color: red; font-size: 20px;\")","element.style = \"color: red; font-size: 20px;\"","element.style.cssText = \"color: red; font-size: 20px;\""],c:3},
+      {q:"Which property sets the text content of an element without parsing HTML tags?",o:["innerText","innerHTML","outerHTML","textContent"],c:3},
+      {q:"Which method inserts a new element before a reference element?",o:["parentElement.insertBefore(newElement, referenceElement)","parentElement.insertAfter(newElement, referenceElement)","parentElement.prepend(newElement, referenceElement)","parentElement.appendChild(newElement, referenceElement)"],c:0},
+      {q:"What happens if you call element.remove()?",o:["The element becomes disabled","The element's content is cleared","The element is hidden","The element is deleted from the DOM"],c:3},
+      {q:"Which event is commonly used for form validation when the user leaves a field?",o:["blur","focus","input","change"],c:0},
+      {q:"Which of the following correctly removes a child element?",o:["parentElement.removeChild(childElement)","parentElement.deleteChild(childElement)","parentElement.detach(childElement)","parentElement.remove(childElement)"],c:0},
+      {q:"What will happen if you call remove() on an element? (Context Match Target)",o:["The element's content is cleared but the element remains","The element is completely deleted from the DOM","The element is moved to a different location","The element becomes hidden but remains in DOM"],c:1},
+      {q:"What is the difference between appendChild and append?",o:["appendChild works with text only, append works with elements only","No difference","appendChild can only add one node at a time, append can add multiple nodes or strings","appendChild adds to the beginning, append adds to the end"],c:2},
+      {q:"Which of the following is NOT a type of DOM node?",o:["Document Node","Style Nodes","Element Nodes","Comment nodes"],c:1},
+      {q:"What is the difference between mouseenter and mouseover?",o:["mouseenter fires on child elements, mouseover does not","No difference","mouseenter bubbles up the DOM tree, mouseover does not","mouseover bubbles up the DOM tree, mouseenter does not"],c:3},
+      {q:"Which method replaces an element with another element or text?",o:["element.replaceWith()","element.replace()","element.changeTo()","element.swap()"],c:0},
+      {q:"Which method inserts HTML text at specific positions relative to an element?",o:["element.insertAdjacentHTML()","element.adjacentHTML()","element.innerHTMLInsert()","element.insertHTML()"],c:0},
+      {q:"What is the correct way to get all images on a page?",o:["document.getImages()","document.images","document.querySelectorAll('img')","Both A and B"],c:3},
+      {q:"Which property sets or returns the HTML content inside an element?",o:["innerText","innerHTML","textContent","outerHTML"],c:1}
+    ]
   }
 };
 
-// Flatten all questions across categories into a single master array (110 questions)
-const MASTER_QUESTIONS = Object.keys(SOURCE_QUIZZES).reduce((acc, key) => {
-  return acc.concat(SOURCE_QUIZZES[key].questions);
-}, []);
-
 function shuffle(a){const b=a.slice();for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
 
-let state={idx:0,score:0,deck:null,answered:false};
+let state={quiz:null,idx:0,score:0,deck:null,answered:false};
 
 function showMenu(){
-  state={idx:0,score:0,deck:null,answered:false};
+  state={quiz:null,idx:0,score:0,deck:null,answered:false};
   const app=document.getElementById('app');
   app.innerHTML='';
   
   const title=document.createElement('h2');
   title.style.cssText='font-size:24px;font-weight:700;text-align:center;margin:0 0 8px;color:#F1F5F9;';
-  title.textContent='Web Architecture Review Engine';
+  title.textContent='Review Quiz all';
   app.appendChild(title);
   
   const sub=document.createElement('p');
   sub.style.cssText='font-size:15px;color:#94A3B8;text-align:center;margin:0 0 2.5rem;line-height:1.5;';
-  sub.textContent='This track shuffles and compiles all curriculum data arrays across UI/UX, Figma, HTML, and CSS into a single master verification pool.';
+  sub.textContent='Select an evaluation tracking module from your curriculum below to initialize verification rules.';
   app.appendChild(sub);
   
-  const container=document.createElement('div');
-  container.style.cssText='display:flex; flex-direction:column; gap:16px;';
+  const grid=document.createElement('div');
+  grid.style.cssText='display:flex;flex-direction:column;gap:16px;';
   
-  const card=document.createElement('button');
-  card.style.cssText='text-align:left;padding:24px;border:1px solid #334155;background:rgba(30, 41, 59, 0.6);border-radius:16px;cursor:pointer;transition:all 0.25s ease;box-shadow:0 4px 10px rgba(0,0,0,0.15);outline:none;';
-  
-  card.onmouseenter=()=>{
-    card.style.borderColor='#6366F1';
-    card.style.background='rgba(99, 102, 241, 0.1)';
-    card.style.transform='translateY(-2px)';
-    card.style.boxShadow='0 8px 20px rgba(99, 102, 241, 0.15)';
-  };
-  card.onmouseleave=()=>{
-    card.style.borderColor='#334155';
-    card.style.background='rgba(30, 41, 59, 0.6)';
-    card.style.transform='none';
-    card.style.boxShadow='0 4px 10px rgba(0,0,0,0.15)';
-  };
-  
-  card.innerHTML='<p style="margin:0;font-weight:600;font-size:18px;color:#FFFFFF;">Initialize Review Track</p><p style="margin:6px 0 0;font-size:14px;color:#94A3B8;">Comprehensive Simulation • '+MASTER_QUESTIONS.length+' Total Questions Mixed Globally</p>';
-  card.onclick=startMasterReview;
-  container.appendChild(card);
-  app.appendChild(container);
+  Object.keys(QUIZZES).forEach(key=>{
+    const q=QUIZZES[key];
+    const card=document.createElement('button');
+    card.style.cssText='text-align:left;padding:20px;border:1px solid #334155;background:rgba(30, 41, 59, 0.6);border-radius:16px;cursor:pointer;transition:all 0.25s ease;box-shadow:0 4px 10px rgba(0,0,0,0.15);outline:none;';
+    
+    card.onmouseenter=()=>{
+      card.style.borderColor='#6366F1';
+      card.style.background='rgba(99, 102, 241, 0.1)';
+      card.style.transform='translateY(-2px)';
+      card.style.boxShadow='0 8px 20px rgba(99, 102, 241, 0.15)';
+    };
+    card.onmouseleave=()=>{
+      card.style.borderColor='#334155';
+      card.style.background='rgba(30, 41, 59, 0.6)';
+      card.style.transform='none';
+      card.style.boxShadow='0 4px 10px rgba(0,0,0,0.15)';
+    };
+    
+    card.innerHTML='<p style="margin:0;font-weight:600;font-size:17px;color:#FFFFFF;">'+q.title+'</p><p style="margin:6px 0 0;font-size:13px;color:#94A3B8;">'+q.questions.length+' Structural Questions</p>';
+    card.onclick=()=>startQuiz(key);
+    grid.appendChild(card);
+  });
+  app.appendChild(grid);
 }
 
-function startMasterReview(){
+function startQuiz(key){
+  state.quiz=key;
+  const questions=QUIZZES[key].questions;
   state.idx=0;state.score=0;state.answered=false;
   
-  state.deck=shuffle(MASTER_QUESTIONS.map((_,i)=>i)).map(i=>{
-    const c=MASTER_QUESTIONS[i].o[MASTER_QUESTIONS[i].c];
-    const opts=shuffle(MASTER_QUESTIONS[i].o);
-    return{q:MASTER_QUESTIONS[i].q,opts,correct:c};
+  state.deck=shuffle(questions.map((_,i)=>i)).map(i=>{
+    const c=questions[i].o[questions[i].c];
+    const opts=shuffle(questions[i].o);
+    return{q:questions[i].q,opts,correct:c};
   });
   renderQ();
 }
@@ -219,7 +285,7 @@ function renderQ(){
   back.style.cssText='background:none;border:none;color:#94A3B8;cursor:pointer;font-size:13px;font-weight:600;padding:4px 0;transition:color 0.2s ease;';
   back.onmouseenter=()=>back.style.color='#6366F1';
   back.onmouseleave=()=>back.style.color='#94A3B8';
-  back.onclick=()=>{if(confirm('Quit active exam evaluation and drop tracking variables?'))showMenu();};
+  back.onclick=()=>{if(confirm('Abandon current evaluation matrix and return to primary tracking menu?'))showMenu();};
   
   const scoreEl=document.createElement('span');
   scoreEl.style.cssText='font-size:13px;font-weight:700;color:#818CF8;letter-spacing:0.5px;text-transform:uppercase;';
@@ -289,7 +355,7 @@ function answer(opt,correct,btns){
   next.onmouseenter=()=>{next.style.filter='brightness(1.1)';next.style.transform='translateY(-1px)';};
   next.onmouseleave=()=>{next.style.filter='none';next.style.transform='none';};
   
-  next.textContent=state.idx<state.deck.length-1?'Next Question →':'See Evaluation 📊';
+  next.textContent=state.idx<state.deck.length-1?'Next Question →':'See Results 📊';
   next.onclick=()=>{state.idx++;state.answered=false;state.idx<state.deck.length?renderQ():results();};
   foot.appendChild(msg);foot.appendChild(next);
 }
@@ -300,23 +366,23 @@ function results(){
   let note='', accentColor='', glowColor='';
   
   if(pct===100){
-    note='Perfect compile verification! Total layout architectural core mastery confirmed.';
+    note='Perfect engineering verification metric track loaded successfully!';
     accentColor='#10B981';glowColor='rgba(16, 185, 129, 0.2)';
   }else if(pct>=80){
-    note='Excellent execution. Highly proficient compilation accuracy score tracked.';
+    note='Highly efficient compilation accuracy score tracked across current nodes.';
     accentColor='#6366F1';glowColor='rgba(99, 102, 241, 0.2)';
   }else if(pct>=50){
-    note='Passing threshold complete. Re-run node configuration streams to patch gaps.';
+    note='Passing verification parameters satisfied. Re-verify false tokens to scale capacity.';
     accentColor='#F59E0B';glowColor='rgba(245, 158, 11, 0.2)';
   }else{
-    note='Optimization requested. Re-evaluate structural variables and logic flows.';
+    note='Runtime errors triggered. Analyze structural variable dependencies and iterate loop mechanics.';
     accentColor='#EF4444';glowColor='rgba(239, 68, 68, 0.2)';
   }
   
   app.innerHTML='';
   const card=document.createElement('div');
   card.style.cssText='border-radius:20px;padding:3rem 2rem;text-align:center;background:rgba(30, 41, 59, 0.6);border:1px solid #334155;box-shadow: 0 10px 30px rgba(0,0,0,0.2);';
-  card.innerHTML='<p style="font-size:13px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;color:#94A3B8;margin:0 0 12px;">Review Sequence Complete</p>'+
+  card.innerHTML='<p style="font-size:13px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;color:#94A3B8;margin:0 0 12px;">Track Sequence Complete</p>'+
     '<p style="font-size:56px;font-weight:800;margin:0;color:#F8FAFC;">'+state.score+'<span style="font-size:28px;font-weight:500;color:#64748B;"> / '+state.deck.length+'</span></p>'+
     '<p style="font-size:26px;font-weight:700;color:'+accentColor+';margin:10px 0 16px;text-shadow: 0 0 15px '+glowColor+';">'+pct+'%</p>'+
     '<p style="font-size:15px;font-weight:400;color:#94A3B8;line-height:1.6;margin:0 0 2.5rem;max-width:360px;margin-left:auto;margin-right:auto;">'+note+'</p>';
@@ -325,13 +391,20 @@ function results(){
   btnDiv.style.cssText='display:flex;gap:14px;justify-content:center;';
   
   const retry=document.createElement('button');
-  retry.textContent='Retake Review';
+  retry.textContent='Retake Track';
   retry.style.cssText='padding:14px 24px;font-size:14px;font-weight:600;border-radius:12px;border:1px solid #475569;background:#334155;color:#F8FAFC;cursor:pointer;transition:all 0.2s;';
   retry.onmouseenter=()=>{retry.style.background='#475569';retry.style.borderColor='#64748B';};
   retry.onmouseleave=()=>{retry.style.background='#334155';retry.style.borderColor='#475569';};
-  retry.onclick=startMasterReview;
+  retry.onclick=()=>startQuiz(state.quiz);
   
-  btnDiv.appendChild(retry);
+  const menu=document.createElement('button');
+  menu.textContent='Switch Topics';
+  menu.style.cssText='padding:14px 24px;font-size:14px;font-weight:600;border-radius:12px;border:none;background:linear-gradient(90deg, #6366F1, #4F46E5);color:#ffffff;cursor:pointer;transition:all 0.2s;box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);';
+  menu.onmouseenter=()=>{menu.style.filter='brightness(1.1)';};
+  menu.onmouseleave=()=>{menu.style.filter='none';};
+  menu.onclick=showMenu;
+  
+  btnDiv.appendChild(retry);btnDiv.appendChild(menu);
   card.appendChild(btnDiv);
   app.appendChild(card);
 }
